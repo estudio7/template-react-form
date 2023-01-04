@@ -25,7 +25,7 @@ class StepNine extends React.Component {
                                                                             <span>These are the tensions that you have considered “relevant” or “very relevant”.</span>
                                                                             
                                                                 </div>
-                                                                <p className="justify-content-center d-flex p-5">Loading data...</p>
+                                                                <p className="justify-content-center d-flex p-5"></p>
                                                         </div>
                                                         <div className="col-md-12">
                                                             <div className="n-summary">
@@ -33,7 +33,7 @@ class StepNine extends React.Component {
                                                                     (please be as creative as you see fit)</span>
                                                               
                                                             </div>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+                                                            <textarea className="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>

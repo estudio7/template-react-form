@@ -22,7 +22,7 @@ class StepFour extends React.Component {
                         <ul>
                             <li>
                                 <label>
-                                    <input type="checkbox" className="identity-check" <div class="centerimg">  <img class="centerimg" src={require('../../assets/img/t />
+                                    <input type="checkbox" className="identity-check" <div className="centerimg">  <img className="centerimg" src={require('../../assets/img/t />
                                     <span className="identity-label"></span>Investability Quotient Percentile
 												<span className="checkmark-border"></span>
                                 </label>

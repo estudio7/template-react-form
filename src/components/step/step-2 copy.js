@@ -98,7 +98,7 @@ class StepTwo extends React.Component {
                             <div className="row">
                                 <div className="col-md-4">
                                     <label>
-                                        <input type="checkbox" className="tax-check" <div class="centerimg">  <img class="centerimg" src={require('../../assets/img/t value="Taxable in the US?" />
+                                        <input type="checkbox" className="tax-check" <div className="centerimg">  <img className="centerimg" src={require('../../assets/img/t value="Taxable in the US?" />
                                         <span className="checkbo-box-border"></span>
                                         <span className="texable-option">
                                             Taxable in the US?

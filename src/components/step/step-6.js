@@ -16,7 +16,7 @@ class StepSix extends React.Component {
                     <div className="wizard-content-item pt-2">
                         <h2>TENSION 4: INTERNAL FOCUS VS. SUPPLIER PROJECTS</h2>
 
-                        <div class="centerimg">  <img class="centerimg" src={require('../../assets/img/t4.png')} alt="" /> </div>
+                        <div className="centerimg">  <img className="centerimg" src={require('../../assets/img/t4.png')} alt="" /> </div>
 
 
 
@@ -25,12 +25,12 @@ class StepSix extends React.Component {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="n-summary">
-                                    <div class="row">
-                                        <div class="col-3"><span>Which argument do you side with?</span>
+                                    <div className="row">
+                                        <div className="col-3"><span>Which argument do you side with?</span>
                                         </div>
-                                        <div class="col-9">
+                                        <div className="col-9">
                                             <img className="padded" src={require('../../assets/img/arrow.png')} alt="" />
-                                            <div class="selectores quatro">
+                                            <div className="selectores quatro">
                                                 <label>
 
                                                     <input type="radio" name="radio" />
@@ -38,25 +38,28 @@ class StepSix extends React.Component {
 
                                                 </label>
                                                 <label>
-                                                    <input type="radio" name="radio" />
+                                                    <input type="radio" name="radio-supplier" />
 
                                                 </label>
                                                 <label>
-                                                    <input type="radio" name="radio" />
+                                                    <input type="radio" name="radio-supplier" />
 
                                                 </label>
                                                 <label>
-                                                    <input type="radio" name="radio" />
+                                                    <input type="radio" name="radio-supplier" />
 
                                                 </label>
                                                 <label>
                                                     <span className="checkmark">INTERNAL FOCUS</span>
-                                                    <input type="radio" name="radio" />
+                                                    <input type="radio" name="radio-supplier" />
 
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="col-12 t4a d-none">
+                                    This field is required!
+                                        </div>
                                 </div>
                             </div>
                         </div>
@@ -65,39 +68,40 @@ class StepSix extends React.Component {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="n-summary">
-                                    <div class="row">
-                                    <div class="col-3"><span>Is this tension relevant to you?
+                                    <div className="row">
+                                    <div className="col-3"><span>Is this tension relevant to you?
                                         </span>
                                         </div>
-                                        <div class="col-9">
+                                        <div className="col-9">
 
 
 
 
                                             <label>
-                                                <input type="radio" name="radio2" />
+                                                <input type="radio" name="radio-supplier-relevant" />
                                                 <span className="checkmark">Very relevant</span>
                                             </label>
 
                                             <label>
-                                                <input type="radio" name="radio2" />
+                                                <input type="radio" name="radio-supplier-relevant" />
                                                 <span className="checkmark">Relevant</span>
                                             </label>
                                             <label>
-                                                <input type="radio" name="radio2" />
+                                                <input type="radio" name="radio-supplier-relevant" />
                                                 <span className="checkmark">Neutral</span>
                                             </label>
                                             <label>
-                                                <input type="radio" name="radio2" />
+                                                <input type="radio" name="radio-supplier-relevant" />
                                                 <span className="checkmark">Irrelevant</span>
                                             </label>
                                             <label>
-                                                <input type="radio" name="radio2" />
+                                                <input type="radio" name="radio-supplier-relevant" />
                                                 <span className="checkmark">Very irrelevant
                                                 </span>
                                             </label>
-
-
+                                        </div>
+                                        <div className="col-12 t4b d-none">
+                                        This field is required!
                                         </div>
                                     </div>
                                 </div>
