@@ -16,7 +16,7 @@ class StepFive extends React.Component {
                     <div className="wizard-content-item pt-2">
                         <h2>TENSION 3: TANGIBLE ACTIONS VS. CARBON CERTIFICATES</h2>
 
-                        <div class="centerimg">  <img class="centerimg" src={require('../../assets/img/t3.png')} alt="" /> </div>
+                        <div className="centerimg">  <img className="centerimg" src={require('../../assets/img/t3.png')} alt="" /> </div>
 
 
 
@@ -25,12 +25,12 @@ class StepFive extends React.Component {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="n-summary">
-                                    <div class="row">
-                                        <div class="col-3"><span>Which argument do you side with?</span>
+                                    <div className="row">
+                                        <div className="col-3"><span>Which argument do you side with?</span>
                                         </div>
-                                        <div class="col-9">
+                                        <div className="col-9">
                                             <img className="padded" src={require('../../assets/img/arrow.png')} alt="" />
-                                            <div class="selectores treis">
+                                            <div className="selectores treis">
                                                 <label>
 
                                                     <input type="radio" name="radio" />
@@ -38,25 +38,28 @@ class StepFive extends React.Component {
 
                                                 </label>
                                                 <label>
-                                                    <input type="radio" name="radio" />
+                                                    <input type="radio" name="radio-carbon" />
 
                                                 </label>
                                                 <label>
-                                                    <input type="radio" name="radio" />
+                                                    <input type="radio" name="radio-carbon" />
 
                                                 </label>
                                                 <label>
-                                                    <input type="radio" name="radio" />
+                                                    <input type="radio" name="radio-carbon" />
 
                                                 </label>
                                                 <label>
                                                     <span className="checkmark">TANGIBLE ACTIONS</span>
-                                                    <input type="radio" name="radio" />
+                                                    <input type="radio" name="radio-carbon" />
 
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="col-12 t3a d-none">
+                                    This field is required!
+                                        </div>
                                 </div>
                             </div>
                         </div>
@@ -65,36 +68,37 @@ class StepFive extends React.Component {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="n-summary">
-                                    <div class="row">
-                                        <div class="col-9">
+                                    <div className="row">
+                                        <div className="col-9">
 
 
 
 
                                             <label>
-                                                <input type="radio" name="radio2" />
+                                            <input className="radio-default" value="Very relevant" name="radio-carbon-relevant" />
                                                 <span className="checkmark">Very relevant</span>
                                             </label>
 
                                             <label>
-                                                <input type="radio" name="radio2" />
+                                                <input type="radio" name="radio-carbon-relevant" />
                                                 <span className="checkmark">Relevant</span>
                                             </label>
                                             <label>
-                                                <input type="radio" name="radio2" />
+                                                <input type="radio" name="radio-carbon-relevant" />
                                                 <span className="checkmark">Neutral</span>
                                             </label>
                                             <label>
-                                                <input type="radio" name="radio2" />
+                                                <input type="radio" name="radio-carbon-relevant" />
                                                 <span className="checkmark">Irrelevant</span>
                                             </label>
                                             <label>
-                                                <input type="radio" name="radio2" />
+                                                <input type="radio" name="radio-carbon-relevant" />
                                                 <span className="checkmark">Very irrelevant
                                                 </span>
                                             </label>
-
-
+                                        </div>
+                                        <div className="col-12 t3b d-none">
+                                        This field is required!
                                         </div>
                                     </div>
                                 </div>

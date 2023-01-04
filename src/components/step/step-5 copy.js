@@ -24,11 +24,11 @@ class StepFive extends React.Component {
                                 <div className="n-summary">
                                     <span>Notification Summary</span>
                                     <label>
-                                        <input type="radio" <div class="centerimg">  <img class="centerimg" src={require('../../assets/img/t name="radio" />
+                                        <input type="radio" <div className="centerimg">  <img className="centerimg" src={require('../../assets/img/t name="radio" />
                                         <span className="checkmark">Yes</span>
                                     </label>
                                     <label>
-                                        <input type="radio" <div class="centerimg">  <img class="centerimg" src={require('../../assets/img/t name="radio" />
+                                        <input type="radio" <div className="centerimg">  <img className="centerimg" src={require('../../assets/img/t name="radio" />
                                         <span className="checkmark">Yes</span>
                                     </label>
                                 </div>

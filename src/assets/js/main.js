@@ -1,16 +1,16 @@
-$(function() {
+$(function () {
 
     // Select Dropdown
-    $('html').on('click', function() {
+    $('html').on('click', function () {
         $('.select .dropdown').hide();
     });
-    $('.select').on('click', function(event) {
+    $('.select').on('click', function (event) {
         event.stopPropagation();
     });
-    $('.select .select-control').on('click', function() {
+    $('.select .select-control').on('click', function () {
         $(this).parent().next().toggle();
     })
-    $('.select .dropdown li').on('click', function() {
+    $('.select .dropdown li').on('click', function () {
         $(this).parent().toggle();
         var text = $(this).attr('rel');
         $(this).parent().prev().find('div').text(text);
@@ -23,19 +23,19 @@ $(function() {
     });
 
 
-    $(".step-box-content ").on('click', function() {
+    $(".step-box-content ").on('click', function () {
 
         $(".step-box-content").removeClass("active");
         $(this).addClass("active");
     });
 
-    $(".services-select-option li").on('click', function() {
+    $(".services-select-option li").on('click', function () {
 
         $(".services-select-option li").removeClass("active");
         $(this).addClass("active");
     });
 
-    $(".opti-list ul li").on('click', function(e) {
+    $(".opti-list ul li").on('click', function (e) {
         $(this).find('input[type=checkbox]').prop("checked", !$(this).find('input[type=checkbox]').prop("checked"));
 
         if ($(this).hasClass("active")) {
@@ -45,13 +45,13 @@ $(function() {
         }
     });
 
-    $('input[type=checkbox]').click(function(e) {
+    $('input[type=checkbox]').click(function (e) {
         e.stopPropagation();
         return true;
         required: true;
     });
 
-    $(".plan-icon-text").on('click', function() {
+    $(".plan-icon-text").on('click', function () {
         $(this).find('input[type=radio]').prop("checked", true);
         $(".plan-icon-text").removeClass("active");
         $(this).addClass("active");
@@ -63,15 +63,14 @@ $(function() {
     //DOM elements
     const DOMstrings = {
         stepsBtnClass: 'multisteps-form__progress-btn',
+        stepFormPanelClass: 'multisteps-form__panel',
+        stepPrevBtnClass: 'js-btn-prev',
+        stepNextBtnClass: 'js-btn-next',
         stepsBtns: document.querySelectorAll(`.multisteps-form__progress-btn`),
         stepsBar: document.querySelector('.multisteps-form__progress'),
         stepsForm: document.querySelector('.multisteps-form__form'),
-        stepFormPanelClass: 'multisteps-form__panel',
-        stepFormPanels: document.querySelectorAll('.multisteps-form__panel'),
-        stepPrevBtnClass: 'js-btn-prev',
-        stepNextBtnClass: 'js-btn-next'
+        stepFormPanels: document.querySelectorAll('.multisteps-form__panel')
     };
-
 
     //remove class from a set of items
     const removeClasses = (elemSet, className) => {
@@ -108,20 +107,17 @@ $(function() {
         //remove active state from all the state
         removeClasses(DOMstrings.stepsBtns, 'js-active');
         removeClasses(DOMstrings.stepsBtns, 'current');
-        
+
         //set picked items to active
         DOMstrings.stepsBtns.forEach((elem, index) => {
             if (index <= activeStepNum) {
                 elem.classList.add('js-active');
                 $(elem).addClass(index);
-
             }
 
             if (index == activeStepNum) {
                 elem.classList.add('current');
             }
-
-
         });
     };
 
@@ -131,13 +127,9 @@ $(function() {
         let activePanel;
 
         DOMstrings.stepFormPanels.forEach(elem => {
-
             if (elem.classList.contains('js-active')) {
-
                 activePanel = elem;
-
             }
-
         });
 
         return activePanel;
@@ -162,7 +154,7 @@ $(function() {
                 // stepFormPanels
                 elem.classList.add('animate__animated', animation);
 
-                setTimeout(function() {
+                setTimeout(function () {
                     removeClasses(DOMstrings.stepFormPanels, 'animate__animated', animation);
                 }, 1200);
 
@@ -176,16 +168,12 @@ $(function() {
 
     //set form height equal to current panel height
     const formHeight = activePanel => {
-
         const activePanelHeight = activePanel.offsetHeight;
-
         DOMstrings.stepsForm.style.height = `${activePanelHeight}px`;
-
     };
 
     const setFormHeight = () => {
         const activePanel = getActivePanel();
-
         formHeight(activePanel);
     };
 
@@ -209,6 +197,28 @@ $(function() {
         // setActivePanel(activeStep);
     });
 
+    // Form Elements
+    let radioCompetenceForm = '';
+    let radioRelevantForm = '';
+    let radioEmissionForm = '';
+    let radioEmissionrForm = '';
+
+    $('.radio-default').on('click', function (e) {
+
+        const radioCompetence = document.querySelector('input[name="radio-competence"]:checked');
+        const radioRelevant = document.querySelector('input[name="radio-relevant"]:checked');
+
+        radioCompetenceForm = radioCompetence ? radioCompetence.value : '';
+        radioRelevantForm = radioRelevant ? radioRelevant.value : '';
+
+    })
+    $('.radio-t2').on('click', function (e) {
+        const radioEmission = document.querySelector('input[name="radio-emission"]:checked');
+        const radioEmissionr = document.querySelector('input[name="radio-emission-relevant"]:checked');
+
+        radioEmissionForm = radioEmission ? radioEmission.value : '';
+        radioEmissionrForm = radioEmissionr ? radioEmissionr.value : '';
+    })
     //PREV/NEXT BTNS CLICK
     DOMstrings.stepsForm.addEventListener('click', e => {
 
@@ -224,44 +234,88 @@ $(function() {
 
         let activePanelNum = Array.from(DOMstrings.stepFormPanels).indexOf(activePanel);
 
-        
+         // Oculta error default
+         $('.t1a').addClass('d-none');
+         $('.t1b').addClass('d-none');
+         $('.t2a').addClass('d-none');
+         $('.t2b').addClass('d-none');
+         $('.t3a').addClass('d-none');
+         $('.t3b').addClass('d-none');
+         $('.t4a').addClass('d-none');
+         $('.t4b').addClass('d-none');
+         $('.t5a').addClass('d-none');
+         $('.t5b').addClass('d-none');
+         $('.t6a').addClass('d-none');
+         $('.t6b').addClass('d-none');
+
+        if (activePanelNum === 2 && (radioCompetenceForm === '' || radioRelevantForm === '')) {
+
+            if (radioCompetenceForm === '') {
+                $('.t1a').removeClass('d-none');
+            } else {
+                $('.t1a').addClass('d-none')
+            }
+
+            if (radioRelevantForm === '') {
+                $('.t1b').removeClass('d-none');
+            } else {
+                $('.t1b').addClass('d-none')
+            }
+            
+            return
+        }
+        if (activePanelNum === 3 && (radioEmissionForm === '' || radioEmissionrForm === '')) {
+
+            if (radioEmissionForm === '') {
+                $('.t2a').removeClass('d-none');
+            } else {
+                $('.t2a').addClass('d-none')
+            }
+
+            if (radioEmissionrForm === '') {
+                $('.t2b').removeClass('d-none');
+            } else {
+                $('.t2b').addClass('d-none')
+            }
+            
+            return
+        }
+
+
         //set active step and active panel onclick
-        if (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`) ) {
+        if (eventTarget.classList.contains(`${DOMstrings.stepPrevBtnClass}`)) {
             activePanelNum--;
 
             setActiveStep(activePanelNum);
             setActivePanel(activePanelNum);
 
-        } else if(eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`)  ) { 
+        } else if (eventTarget.classList.contains(`${DOMstrings.stepNextBtnClass}`)) {
 
-         var form = $('#wizard');
-         form.validate();
-
-
-         var parent_fieldset = $('.multisteps-form__panel.js-active');
-         var next_step = true;
-         
-         parent_fieldset.find('.required').each( function(){
-            next_step = false;
-            var form = $('.required');
+            var form = $('#wizard');
             form.validate();
-            $(this).addClass('custom-select is-invalid');
-        }); 
 
-         if(next_step === true || form.valid() === true) {
-            $("html, body").animate({
-                scrollTop: 0
-            }, 600);
-            activePanelNum++;
-            setActiveStep(activePanelNum);
-            setActivePanel(activePanelNum);
+            var parent_fieldset = $('.multisteps-form__panel.js-active');
+            var next_step = true;
+
+            parent_fieldset.find('.required').each(function () {
+                next_step = false;
+                var form = $('.required');
+                form.validate();
+                $(this).addClass('custom-select is-invalid');
+            });
+
+            if (next_step === true || form.valid() === true) {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 600);
+                activePanelNum++;
+                setActiveStep(activePanelNum);
+                setActivePanel(activePanelNum);
+            }
+
         }
 
-
-    } 
-    
-
-});
+    });
 
     //SETTING PROPER FORM HEIGHT ONLOAD
     window.addEventListener('load', setFormHeight, true);

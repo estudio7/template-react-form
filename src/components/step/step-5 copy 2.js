@@ -17,7 +17,7 @@ class StepFive extends React.Component {
                         <h2>Tension 1: goal vs. competence</h2>
                         <p>To what side you would side with and how relevant is this tension to you?
 </p>
-                        <div class="">  <img src={require('../../assets/img/addressed.png')} alt="" /> </div>
+                        <div className="">  <img src={require('../../assets/img/addressed.png')} alt="" /> </div>
 <p></p>
 
 
